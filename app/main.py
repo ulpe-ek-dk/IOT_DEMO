@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 
 from .database import engine, get_db, Base
@@ -11,6 +12,15 @@ app = FastAPI(
     title="IoT Temperature & Humidity API",
     description="REST API for receiving and storing temperature/humidity measurements",
     version="1.0.0",
+)
+
+# Enable CORS for web UI access
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins for local development
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
