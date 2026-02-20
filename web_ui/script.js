@@ -198,5 +198,7 @@ function updateLatestCards() {
 // Format timestamp for display
 function formatTimestamp(timestamp) {
     const date = new Date(timestamp);
-    return date.toLocaleString();
+      return date.toLocaleString('da-DK', {
+        timeZone: 'Europe/Copenhagen' //UTC i databasen, konverteres til lokal tid i browseren
+    });
 }
