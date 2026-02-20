@@ -27,6 +27,10 @@ IOT_DEMO/
 | `app/models.py` | Defines the `Measurement` database table structure |
 | `app/schemas.py` | Defines request/response data validation schemas |
 
+# Virtual Python environment
+python3 -m venv venv
+source venv/bin/activate
+
 ## Installation
 
 ```bash
@@ -38,7 +42,7 @@ pip install -r requirements.txt
 ```bash
 python -m uvicorn app.main:app --reload
 ```
-
+#Kører kun lokalt, kan ikke ses fra Raspberry Pi
 The server will start at http://127.0.0.1:8000
 
 - `--reload` enables auto-reload on code changes (development mode)
