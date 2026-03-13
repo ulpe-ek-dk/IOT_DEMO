@@ -1,0 +1,6 @@
+#Python compile filer
+*.pyc
+
+#Personlige filer
+ulpe_test.js
+
